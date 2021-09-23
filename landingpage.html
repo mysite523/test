@@ -10,6 +10,17 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://github.com/mysite523/test/boostrap.css">
+    <script src="https://github.com/mysite523/test/jquery.js"></script>
+    <script>
+    function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
+        );
+    }
+    </script>
+    
     <style>
 .btn {
   border: 2px solid blue;
@@ -32,7 +43,7 @@
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>My Landing Page</h1>
-                <a href="https://8vlr0.bemobtrk.com/click?subid1=test" class="btn success">Click me!</a>
+                <a href="https://8vlr0.bemobtrk.com/click?' + getURLParameter('subid1=test') + '" class="btn success">Click me!</a>
             </p>
         </div>
     </div>
