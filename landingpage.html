@@ -25,6 +25,19 @@
     }
 </style>
 
+    <script>
+        function getParameterByName(name, defaultValue) {
+            if (!defaultValue) {
+                defaultValue = '';
+            }
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(window.location.href);
+            if (!results) return defaultValue;
+            if (!results[2]) return defaultValue;
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    </script>
 </head>
 
 <body>
@@ -32,8 +45,9 @@
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>My Landing Page</h1>
+            <p>Special offer for <script>document.write(getParameterByName('p1'))</script> users!</p>
             <p>
-                <a href="https://8vlr0.bemobtrk.com/click?subid1=test" class="btn success">Click me!</a>
+                <a href="https://8vlr0.bemobtrk.com/click" class="btn success">Click me!</a>
             </p>
         </div>
     </div>
