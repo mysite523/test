@@ -10,16 +10,19 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://github.com/mysite523/test/boostrap.css">
-    <script src="https://github.com/mysite523/test/jquery.js"></script>
     <script>
-    function getURLParameter(name) {
-        return decodeURI(
-            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
-        );
-    }
-    </script>
+     function getParameterByName(name, defaultValue) {
+         if (!defaultValue) {
+             defaultValue = '';
+         }
+         name = name.replace(/[\[\]]/g, "\\$&");
+         var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+             results = regex.exec(window.location.href);
+         if (!results) return defaultValue;
+         if (!results[2]) return defaultValue;
+         return decodeURIComponent(results[2].replace(/\+/g, " "));
+     }
+ </script>
     
     <style>
 .btn {
@@ -43,9 +46,9 @@
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>My Landing Page</h1>
-            <script>
-                document.write('<a class="btn btn-lg btn-success" href="https://8vlr0.bemobtrk.com/click?' + getURLParameter('subid1=test') + '" role="button">Click me!</a>')
-            </script>
+             <p>
+                <a href=""https://8vlr0.bemobtrk.com/click? <script>document.write(getParameterByName('subid1=test'))</script> class="btn success">Click me!</a>
+            </p>
             </p>
         </div>
     </div>
