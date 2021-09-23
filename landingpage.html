@@ -11,18 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <script>
-     function getParameter(name, defaultValue) {
-         if (!defaultValue) {
-             defaultValue = '';
-         }
-         name = name.replace(/[\[\]]/g, "\\$&");
-         var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-             results = regex.exec(window.location.href);
-         if (!results) return defaultValue;
-         if (!results[2]) return defaultValue;
-         return decodeURIComponent(results[2].replace(/\+/g, " "));
-     }
- </script>
+    function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
+        );
+    }
+    </script>
     
     <style>
 .btn {
@@ -46,9 +40,9 @@
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>My Landing Page</h1>
-             <p>
-                <a href="https://8vlr0.bemobtrk.com/click?<script>document.write(getParameter(subid1=test))</script>" class="btn success">Click me!</a>
-            </p>
+             <script>
+                document.write('<a class="btn btn-lg btn-success" href="https://8vlr0.bemobtrk.com/click?' + getURLParameter('subid1=test') + '" role="button">Click me!</a>')
+            </script>
             </p>
         </div>
     </div>
