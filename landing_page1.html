@@ -29,15 +29,30 @@
 
 <body>
     
+    <script type="text/javascript">
+function bemobCb(params) {
+    var t = params.trackingDomain+'/click/';
+    var re = new RegExp(t+'?(\\d*)');
+    var e = document.querySelectorAll('a[href*="'+t+'"]');
+    for (var i = 0; i < e.length; i++) {
+        var ex = re.exec(e[i].href);
+        if (ex) {
+            e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1);
+        }
+    }
+}
+</script>
+<script type="text/javascript">!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://track.onlyfortests.tech/landing/1bfaa54b-b330-4686-837f-00aefccc8c58?callback=bemobCb&rule=1&path=1&landing=1&"+window.location.search.substring(1);var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script><noscript><img src="https://track.onlyfortests.tech/landing/1bfaa54b-b330-4686-837f-00aefccc8c58?rule=1&path=1&landing=1" alt=""></noscript>
+    
      <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>My Landing Page</h1>
             <p>Special offer for my users!</p>
     
 <p>
-                <a href="https://track.onlyfortests.tech/click/1" class="btn success">Click me1!</a>
-                <a href="https://track.onlyfortests.tech/click/2" class="btn success">Click me2!</a>
-                <a href="https://track.onlyfortests.tech/click/3" class="btn success">Click me3!</a>
+                <a href="https://track.onlyfortests.tech/click/1?ns=c%3D1bfaa54b-b330-4686-837f-00aefccc8c58..l%3D5a9dabd4-be3f-456c-b433-4c1bee4d10ba..a%3D0..b%3D0">Click me1!</a>
+                <a href="https://track.onlyfortests.tech/click/2?ns=c%3D1bfaa54b-b330-4686-837f-00aefccc8c58..l%3D5a9dabd4-be3f-456c-b433-4c1bee4d10ba..a%3D0..b%3D0">Click me2!</a>
+                <a href="https://track.onlyfortests.tech/click/3?ns=c%3D1bfaa54b-b330-4686-837f-00aefccc8c58..l%3D5a9dabd4-be3f-456c-b433-4c1bee4d10ba..a%3D0..b%3D0">Click me3!</a>
             </p>
         </div>
     </div>
