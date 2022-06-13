@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Landing Page</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <style>
+.btn {
+  border: 2px solid blue;
+  background-color: dodgerblue;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.success {
+  border-color: #2196F3;
+  color: white;
+    }
+</style>
+    
+</head>
+
+<body>
+    
+    <script type="text/javascript">
+function bemobCb(params) {
+    var t = params.trackingDomain+'/click/';
+    var re = new RegExp(t+'?(\\d*)');
+    var e = document.querySelectorAll('a[href*="'+t+'"]');
+    for (var i = 0; i < e.length; i++) {
+        var ex = re.exec(e[i].href);
+        if (ex) {
+            e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1);
+        }
+    }
+}
+</script>
+<script type="text/javascript">!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://8vlr0.bemobtrk.com/landing/9e5e80b7-9456-4ac5-aaba-8337ec8fc088?callback=bemobCb&rule=1&path=1&landing=1&"+window.location.search.substring(1);var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script><noscript><img src="https://8vlr0.bemobtrk.com/landing/9e5e80b7-9456-4ac5-aaba-8337ec8fc088?rule=1&path=1&landing=1" alt=""></noscript>
+    
+     <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>My Landing Page</h1>
+            <p>Special offer for my users!</p>
+    
+<p>
+                <a href="https://8vlr0.bemobtrk.com/click/1?ns=c%3D9e5e80b7-9456-4ac5-aaba-8337ec8fc088..l%3D5fcd1e75-dd8d-4433-b371-863e53d9a672..a%3D0..b%3D0">Click me1!</a>
+                <a href="https://8vlr0.bemobtrk.com/click/2?ns=c%3D9e5e80b7-9456-4ac5-aaba-8337ec8fc088..l%3D5fcd1e75-dd8d-4433-b371-863e53d9a672..a%3D0..b%3D0">Click me2!</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
