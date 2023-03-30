@@ -27,15 +27,19 @@
 
 <script type="text/javascript">
 function bemobCb(params) {
-    var t = params.trackingDomain+'/click/';
-    var re = new RegExp(t+'?(\\d*)');
-    var e = document.querySelectorAll('a[href*="'+t+'"]');
-    for (var i = 0; i < e.length; i++) {
-        var ex = re.exec(e[i].href);
-        if (ex) {
-            e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1);
-        }
+  var t = params.trackingDomain+'/click/';
+  var re = new RegExp(t+'?(\\d*)');
+  var e = document.querySelectorAll('a[href*="'+t+'"]');
+  for (var i = 0; i < e.length; i++) {
+    var ex = re.exec(e[i].href);
+    if (ex) {
+      var queryString = e[i].href.split('?')[1];
+      if (queryString) {
+        queryString = queryString.split('#')[0];
+      }
+      e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1) + (queryString ? '&' + queryString : '');
     }
+  }
 }
 </script>
 <script type="text/javascript">!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://8vlr0.bemobtrk.com/landing/90943c8b-d1d7-4f00-9330-5052934a26d0?callback=bemobCb&rule=1&path=1&landing=1&"+window.location.search.substring(1);var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script><noscript><img src="https://8vlr0.bemobtrk.com/landing/90943c8b-d1d7-4f00-9330-5052934a26d0?rule=1&path=1&landing=1" alt=""></noscript>
