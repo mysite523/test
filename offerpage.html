@@ -32,7 +32,22 @@ src="https://www.facebook.com/tr?id=816616183150434&ev=PageView&noscript=1"
 
 <body>
 
-    <img src="https://8vlr0.bemobtrk.com/conversion.gif?cet=test1&cid=OPTIONAL&payout=OPTIONAL&txid=OPTIONAL" width="1" height="1" border="0" alt="" />
+<script type="text/javascript">
+function bemobCb(params) {
+    var t = params.trackingDomain+'/click/';
+    var re = new RegExp(t+'?(\\d*)');
+    var e = document.querySelectorAll('a[href*="'+t+'"]');
+    for (var i = 0; i < e.length; i++) {
+        var ex = re.exec(e[i].href);
+        if (ex) {
+            e[i].href = params.ctaSecureUrl.replace('%%OFFER_NUMBER%%', ex[1] || 1);
+        }
+    }
+}
+</script>
+<script type="text/javascript">!function(){var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://8vlr0.bemobtrk.com/landing/ac15f72b-5878-4ed5-bfe2-ae4df6c38eec?callback=bemobCb&rule=1&path=1&landing=1&"+window.location.search.substring(1);var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script><noscript><img src="https://8vlr0.bemobtrk.com/landing/ac15f72b-5878-4ed5-bfe2-ae4df6c38eec?rule=1&path=1&landing=1" alt=""></noscript>
+    
+<img src="https://8vlr0.bemobtrk.com/conversion.gif?cid=OPTIONAL&payout=OPTIONAL&txid=OPTIONAL&status=OPTIONAL" width="1" height="1" border="0" alt="" />
     
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
