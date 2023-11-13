@@ -17,7 +17,8 @@ $signedHash = hash_hmac('sha1', $signature['timestamp'], LANDING_SECRET_KEY);
 if ($signedHash !== $signature['hash'] || strtotime(SIGNATURE_TTL, $signature['timestamp']) < time()) {
     exit('Access denied');
 }   
-?><!DOCTYPE html>
+?>
+    <!DOCTYPE html>
 <html>
 
 <head>
