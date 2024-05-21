@@ -34,7 +34,7 @@
             <h1>My Landing Page</h1>
             <p>Special offer for my users!</p>
 
-            <button onclick="sendEvent('test')">Click me</button>
+            <button onclick="sendEvent('click')">Click me</button>
             
     <script>
 function getURLParameter(name) {
@@ -45,7 +45,7 @@ function getURLParameter(name) {
 
 function sendEvent(event) {
   var img = document.createElement('img');
-  img.src = `https://8vlr0.bemobtrk.com/conversion.gif?cet=${event}&cid=${getURLParameter('cid')}`;
+  img.src = `https://8vlr0.bemobtrk.com/conversion.gif?cet=${event}&cid=${getURLParameter('cid')&payout=1&txid=123456}`;
   img.style.display = 'none';
   document.body.appendChild(img);
   console.log(`:sunglasses: BeMob Event - ${event}`);
