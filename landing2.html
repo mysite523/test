@@ -28,12 +28,46 @@
 </head>
 
 <body>
+
+    <!DOCTYPE html>
+<html>
+<body>
+<h1>HTML DOM Events</h1>
+<h2>The onclick Event</h2>
+
+<p>The onclick event triggers a function when an element is clicked on.</p>
+<p>Click to trigger a function that will output "Hello World":</p>
+
+<button onclick="sendEvent('test')">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function getURLParameter(name) {
+  return decodeURIComponent(
+    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || '',
+  );
+}
+
+function sendEvent(event) {
+  var img = document.createElement('img');
+  img.src = `https://8vlr0.bemobtrk.com/conversion.gif?cet=${event}&cid=${getURLParameter('cid')}`;
+  img.style.display = 'none';
+  document.body.appendChild(img);
+  console.log(`:sunglasses: BeMob Event - ${event}`);
+  return;
+}
+</script>
+
+</body>
+</html>
+    
      <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>My Landing Page</h1>
             <p>Special offer for my users!</p>
 <p>
-                <a href="https://8vlr0.bemobtrk.com/click" class="btn success">https://8vlr0.bemobtrk.com/click</a>
+                <a href="https://8vlr0.bemobtrk.com/click" class="btn success">Click me</a>
             </p>
         </div>
     </div>
