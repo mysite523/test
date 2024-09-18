@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Landing Page</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <style>
+.btn {
+  border: 2px solid blue;
+  background-color: dodgerblue;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.success {
+  border-color: #2196F3;
+  color: white;
+    }
+</style>
+    
+</head>
+
+<body>
+    
+     <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>My Landing Page</h1>
+            <p>Special offer for my users!</p>
+
+           <a href="https://8vlr0.bemobtrk.com/click/1" class="btn success">Click me 1!</a>
+           <a href="https://8vlr0.bemobtrk.com/click/2" class="btn success">Click me 2!</a>
+           <a href="https://8vlr0.bemobtrk.com/click/3" class="btn success">Click me 3!</a>
+            
+    <script>
+  const trackingDomain = "8vlr0.bemobtrk.com"
+
+  function getURLParameter(name) {
+    return decodeURIComponent(
+      (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || '',
+    );
+  }
+
+  async function sendConversion(customEventType) {
+    const url = `https://8vlr0.bemobtrk.com/conversion.txt?cid=${getURLParameter('cid')}&cet=${customEventType || 'OPTIONAL'}`;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    console.log(`:sunglasses: BeMob Conversion Sent`);
+  }
+
+  document.addEventListener('click', function(event) {
+    // Find the nearest <a> tag ancestor of the clicked element (including the element itself)
+    const anchor = event.target.closest('a');
+
+    // Check if the anchor tag exists and has an href
+    if (anchor && anchor.getAttribute('href')) {
+      const href = anchor.getAttribute('href');
+
+      // Check if the href starts with the desired prefix
+      if (href.startsWith(`https://8vlr0.bemobtrk.com/click`)) {
+        console.log('User clicked URL:', href);
+
+        sendConversion().catch(console.error);
+        // sendConversion("test").catch(console.error); // custom conversion tracking
+
+        // The link will follow its default behavior, no need to prevent it
+      }
+    }
+  }, false);
+</script>
+</body>
+</html>
