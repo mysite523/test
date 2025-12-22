@@ -38,7 +38,7 @@
  }
 
  async function sendConversion(customEventType) {
-   const url = `https://8vlr0.bemobtrk.com/conversion.txt?cid=${getURLParameter('cid')} || 'OPTIONAL'}`;
+   const url = `https://8vlr0.bemobtrk.com/conversion.txt?cet=${event}&cid=${getURLParameter('cid')} || 'OPTIONAL'}`;
    const response = await fetch(url);
    if (!response.ok) {
      throw new Error(`Response status: ${response.status}`);
