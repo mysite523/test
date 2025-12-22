@@ -37,8 +37,10 @@
    );
  }
 
- async function sendConversion(customEventType) {
-   const url = `https://8vlr0.bemobtrk.com/conversion.txt?cet=${event}&cid=${getURLParameter('cid')} || 'OPTIONAL'}`;
+async function sendConversion(eventType = 'click') {
+  const cid = getURLParameter('cid') || 'OPTIONAL';
+  const url = `https://8vlr0.bemobtrk.com/conversion.txt?cet=${eventType}&cid=${cid}`;
+ 
    const response = await fetch(url);
    if (!response.ok) {
      throw new Error(`Response status: ${response.status}`);
