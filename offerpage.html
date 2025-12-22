@@ -1,64 +1,39 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <title>My Offer Page</title>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '847392256902705');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=816616183150434&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    
 </head>
-
 <body>
-
-    <script>
-<button onclick="sendEvent('click')">Click me</button>
-<script>
-function getURLParameter(name) {
-  return decodeURIComponent(
-    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || '',
-  );
-}
-function sendEvent(event) {
-  var img = document.createElement('img');
-  img.src = `https://8vlr0.bemobtrk.com/conversion.gif?cid=${getURLParameter('cid')}`;
-  img.style.display = 'none';
-  document.body.appendChild(img);
-  console.log(`:sunglasses: BeMob Event - ${event}`);
-  // Redirect
-  window.location.href = "https://www.google.com";
-  return;
-}
-</script>
-    
     <div class="container theme-showcase" role="main">
         <div class="jumbotron">
             <h1>My Offer Page</h1>
-            class=“btn-success”>Click me!</a>
-            </p>
+            <button onclick="sendEvent('click')" class="btn-success">Click me!</button>
         </div>
     </div>
-</body>
 
+    <script>
+        function getURLParameter(name) {
+            return decodeURIComponent(
+                (new RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+            );
+        }
+
+        function sendEvent(event) {
+            // Create tracking pixel
+            var img = document.createElement('img');
+            img.src = `https://8vlr0.bemobtrk.com/conversion.gif?cid=${getURLParameter('cid')}`;
+            img.style.display = 'none';
+            document.body.appendChild(img);
+            
+            // Log to console
+            console.log(`😎 BeMob Event - ${event}`);
+            
+            // Redirect after short delay to ensure tracking fires
+            setTimeout(function() {
+                window.location.href = "https://www.google.com";
+            }, 150);
+        }
+    </script>
+</body>
 </html>
