@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer | Demo Page</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            color: #263247;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .offer-card {
+            background: #ffffff;
+            max-width: 620px;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .offer-banner {
+            background: linear-gradient(135deg, #2456d8, #5488f5);
+            color: white;
+            padding: 55px 24px;
+        }
+
+        .offer-banner .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .offer-banner h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .offer-banner p {
+            font-size: 17px;
+            opacity: 0.95;
+        }
+
+        .offer-content {
+            padding: 35px 30px 40px;
+        }
+
+        .offer-content h2 {
+            font-size: 23px;
+            margin-bottom: 14px;
+        }
+
+        .offer-content p {
+            color: #68758a;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #2456d8;
+            color: white;
+            text-decoration: none;
+            padding: 15px 34px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #1945b5;
+        }
+
+        .footer {
+            font-size: 12px;
+            color: #9aa3b2;
+            padding: 0 20px 22px;
+        }
+
+        @media (max-width: 480px) {
+            .offer-banner h1 {
+                font-size: 29px;
+            }
+
+            .offer-content {
+                padding: 28px 20px 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="offer-card">
+
+        <section class="offer-banner">
+            <span class="tag">SPECIAL OFFER</span>
+            <h1>Discover Your Offer</h1>
+            <p>An exclusive opportunity is waiting for you!</p>
+        </section>
+
+        <section class="offer-content">
+            <h2>Welcome!</h2>
+            <p>
+                Thank you for visiting our offer page.
+                Explore this special offer and discover
+                what we have prepared for you.
+            </p>
+
+            <a href="#offer-details" class="cta-button">
+                Learn More
+            </a>
+        </section>
+
+        <section id="offer-details" class="offer-content">
+            <h2>Your Offer Is Ready</h2>
+            <p>
+                This is a demo offer page for campaign
+                tracking and testing purposes.
+            </p>
+        </section>
+
+        <div class="footer">
+            Demo page for tracking tests
+        </div>
+
+    </main>
+
+</body>
+</html>
